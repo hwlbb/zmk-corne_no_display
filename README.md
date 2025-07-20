@@ -1,16 +1,18 @@
 # Origin Corne Keyboard
 
-## ZMK Studio 支持
+## ZMK Studio 支持状态
 
-本配置已启用 ZMK Studio 支持，你可以使用图形界面来配置键盘布局：
+⚠️ **注意**: ZMK Studio 对 Corne 键盘的支持目前还在开发阶段。虽然 ZMK 固件库中包含了 Corne 键盘的定义，但 Studio 支持可能还未完全实现。
 
-**重要**: 此项目包含了自定义的 Corne 键盘 Shield 定义，以支持 ZMK Studio 功能。这些定义位于 `boards/shields/corne/` 目录中。
+当前配置使用标准的 ZMK 构建，暂时不启用 Studio 功能。一旦 ZMK 官方完全支持 Corne 键盘的 Studio 功能，可以通过以下方式启用：
 
-1. **连接键盘**: 通过USB或蓝牙连接键盘到电脑
-2. **访问 ZMK Studio**: 打开 [ZMK Studio](https://zmk.dev/studio)
-3. **加载配置**: Studio会自动检测并加载你的键盘配置
-4. **实时编辑**: 在图形界面中修改按键映射，变更会实时生效
-5. **保存配置**: 将修改后的配置导出并更新到此仓库
+1. 在 `build.yaml` 中为左半键盘添加：
+   ```yaml
+   snippet: studio-rpc-usb-uart
+   cmake-args: -DCONFIG_ZMK_STUDIO=y
+   ```
+
+2. 在 keymap 中添加 `&studio_unlock` 绑定
 
 ## 键盘布局
 

@@ -1,18 +1,32 @@
 # ZMK Studio 使用指南
 
-## 重要说明
+## 当前状态
 
-⚠️ **自定义Shield配置**: 本项目包含自定义的Corne键盘Shield定义以支持ZMK Studio。这些文件位于 `boards/shields/corne/` 目录中，包括：
+⚠️ **重要说明**: 根据 ZMK 官方文档和构建测试，Corne 键盘的 ZMK Studio 支持目前可能还未完全实现。
 
-- `corne.dtsi` - 主要的键盘定义和物理布局
-- `corne_left.overlay` - 左半键盘配置
-- `corne_right.overlay` - 右半键盘配置  
-- `Kconfig.shield` - Kconfig配置
-- `corne.conf` - 默认配置文件
+虽然 ZMK 固件库中包含了 Corne 键盘的定义，但 Studio 功能需要额外的物理布局配置，这些配置可能还在开发中。
 
-这些文件是为了解决ZMK内置Corne定义暂时不支持Studio而创建的自定义定义。
+## 现状分析
 
-## 什么是 ZMK Studio？
+1. **ZMK 内置支持**: ZMK 确实包含 `corne_left` 和 `corne_right` 的 shield 定义
+2. **Studio 要求**: Studio 需要键盘定义包含物理布局（physical layout）和 `keys` 属性
+3. **开发状态**: 根据 ZMK 官方博客，并非所有键盘都已更新为支持 Studio
+
+## 如何检查 Studio 支持
+
+你可以查看 [ZMK Studio 支持的键盘列表](https://zmk.dev/blog/2024/11/11/zmk-studio-mvp-ga) 来确认 Corne 是否已正式支持。
+
+## 替代方案
+
+在 Studio 支持完全实现之前，你可以：
+
+1. **使用传统配置**: 继续编辑 `.keymap` 文件来自定义布局
+2. **使用 Keymap Editor**: 使用第三方工具如 [keymap-editor.zmk.dev](https://keymap-editor.zmk.dev/)
+3. **关注更新**: 持续关注 ZMK 官方更新，等待 Corne 的 Studio 支持
+
+## 未来启用 Studio
+
+一旦 ZMK 官方完全支持 Corne 键盘的 Studio 功能，可以通过以下步骤启用：
 
 ZMK Studio 是一个基于 Web 的图形界面工具，允许你实时修改 ZMK 键盘的配置，无需重新编译和刷写固件。
 
