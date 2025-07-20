@@ -4,6 +4,8 @@
 
 本配置已启用 ZMK Studio 支持，你可以使用图形界面来配置键盘布局：
 
+**重要**: 此项目包含了自定义的 Corne 键盘 Shield 定义，以支持 ZMK Studio 功能。这些定义位于 `boards/shields/corne/` 目录中。
+
 1. **连接键盘**: 通过USB或蓝牙连接键盘到电脑
 2. **访问 ZMK Studio**: 打开 [ZMK Studio](https://zmk.dev/studio)
 3. **加载配置**: Studio会自动检测并加载你的键盘配置

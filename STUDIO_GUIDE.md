@@ -1,5 +1,17 @@
 # ZMK Studio 使用指南
 
+## 重要说明
+
+⚠️ **自定义Shield配置**: 本项目包含自定义的Corne键盘Shield定义以支持ZMK Studio。这些文件位于 `boards/shields/corne/` 目录中，包括：
+
+- `corne.dtsi` - 主要的键盘定义和物理布局
+- `corne_left.overlay` - 左半键盘配置
+- `corne_right.overlay` - 右半键盘配置  
+- `Kconfig.shield` - Kconfig配置
+- `corne.conf` - 默认配置文件
+
+这些文件是为了解决ZMK内置Corne定义暂时不支持Studio而创建的自定义定义。
+
 ## 什么是 ZMK Studio？
 
 ZMK Studio 是一个基于 Web 的图形界面工具，允许你实时修改 ZMK 键盘的配置，无需重新编译和刷写固件。
